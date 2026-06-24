@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['magic_0',['magic',['../structtar__header.html#afa2e8b5df1e6836c46f8ccf32409ed04',1,'tar_header']]],
-  ['mode_1',['mode',['../structtar__header.html#a9c0f9c8fd9ef85f13b5e8cad47ca5217',1,'tar_header']]],
-  ['mtime_2',['mtime',['../structtar__header.html#ade29454543ef3b9f6bfc47d4c0325ee4',1,'tar_header']]]
+  ['devmajor_0',['devmajor',['../structtar__header.html#a0b2b989ae678d00b9aa7630daa9a2225',1,'tar_header']]],
+  ['devminor_1',['devminor',['../structtar__header.html#a39a051e392f9101489eafc64b60e1ca0',1,'tar_header']]],
+  ['dll_2',['Linking the Windows DLL',['../index.html#autotoc_md13',1,'']]],
+  ['dll_3',['3. Windows Dynamic Link Library (.dll)',['../index.html#autotoc_md9',1,'']]],
+  ['documentation_20generation_4',['Documentation Generation',['../index.html#autotoc_md17',1,'']]],
+  ['dylib_5',['2. Shared Library (.so / .dylib)',['../index.html#autotoc_md8',1,'']]],
+  ['dynamic_20link_20library_20dll_6',['3. Windows Dynamic Link Library (.dll)',['../index.html#autotoc_md9',1,'']]]
 ];

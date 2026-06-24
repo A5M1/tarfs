@@ -25,6 +25,19 @@
 var NAVTREE =
 [
   [ "tarfs", "index.html", [
+    [ "Features", "index.html#autotoc_md2", null ],
+    [ "File Structure", "index.html#autotoc_md4", null ],
+    [ "Compilation Guide", "index.html#autotoc_md6", [
+      [ "Static Library (.a)", "index.html#autotoc_md7", null ],
+      [ "Shared Library (.so / .dylib)", "index.html#autotoc_md8", null ],
+      [ "Windows Dynamic Link Library (.dll)", "index.html#autotoc_md9", null ]
+    ] ],
+    [ "Linking Against the Library", "index.html#autotoc_md11", [
+      [ "Linking the Static or Shared Library (Linux/macOS)", "index.html#autotoc_md12", null ],
+      [ "Linking the Windows DLL", "index.html#autotoc_md13", null ]
+    ] ],
+    [ "Quick API Usage Example", "index.html#autotoc_md15", null ],
+    [ "Documentation Generation", "index.html#autotoc_md17", null ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['linkname_0',['linkname',['../structtar__header.html#a0f87c06d6b8eec283fb0a5f2482053d9',1,'tar_header']]]
+  ['capacity_0',['capacity',['../structtar__archive.html#a4715d1dc07d803f0dad2891e382868b5',1,'tar_archive']]],
+  ['chksum_1',['chksum',['../structtar__header.html#a050e232fc9ed4ca3a22c0ce9c5b7748d',1,'tar_header']]],
+  ['compilation_20guide_2',['Compilation Guide',['../index.html#autotoc_md6',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['buffer_0',['buffer',['../structtar__archive.html#ab38b7c6237d5c3de989c94483f4b890b',1,'tar_archive']]]
+  ['1_20static_20library_20a_0',['1. Static Library (.a)',['../index.html#autotoc_md7',1,'']]]
 ];

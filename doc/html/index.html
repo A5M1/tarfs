@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>tarfs: Main Page</title>
+<title>tarfs: tarfs</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -95,10 +95,110 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">tarfs Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">tarfs </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
+<p>A lightweight, high-performance, read-only virtual file system parser for uncompressed POSIX ustar TAR archives. Written in clean C, <code>tarfs</code> is designed for embedded applications, game asset management, and resource bundling where low memory overhead is critical.</p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md2"></a>
+Features</h1>
+<ul>
+<li><b>Zero-Copy In-Memory Parsing</b>: Parses archives directly out of pre-allocated buffers without duplication.</li>
+<li><b>Single-Allocation File Loading</b>: Opens files using a single contiguous block of memory.</li>
+<li><b>Opaque Architecture</b>: Maintains strict encapsulation to prevent user-space structural contamination.</li>
+<li><b>Multi-Platform Support</b>: Built with export configurations for Linux, macOS, and Windows DLL platforms.</li>
+<li><b>Fully Documented</b>: Extensively tagged using standard Doxygen semantics for automated manual generation.</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md4"></a>
+File Structure</h1>
+<ul>
+<li><code><a class="el" href="tarfs_8h.html" title="Public API definitions for the lightweight, read-only TAR file system parser.">tarfs.h</a></code>: Public API definition containing memory management guards, documentation handles, and DLL export macros.</li>
+<li><code><a class="el" href="tarfs_8c.html" title="Private implementation details and structural definitions for the TAR parser.">tarfs.c</a></code>: Low-level architectural implementation, checksum validation, and octal-to-binary translation engines.</li>
+</ul>
+<hr  />
+<h1><a class="anchor" id="autotoc_md6"></a>
+Compilation Guide</h1>
+<p>This library can be compiled easily using Clang or GCC into whatever binary format your pipeline demands.</p>
+<h2><a class="anchor" id="autotoc_md7"></a>
+1. Static Library (.a)</h2>
+<p>Perfect for standard static linking into a single standalone executable file.</p>
+<div class="fragment"><div class="line">clang -Wall -Wextra -O2 -c tarfs.c -o tarfs.o</div>
+<div class="line">ar rcs libtarfs.a tarfs.o</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
+2. Shared Library (.so / .dylib)</h2>
+<p>Ideal for dynamic dependency loading at runtime on Unix systems.</p>
+<p><b>Linux:</b></p>
+<div class="fragment"><div class="line">clang -Wall -Wextra -O2 -fPIC -c tarfs.c -o tarfs.o</div>
+<div class="line">clang -shared -o libtarfs.so tarfs.o</div>
+</div><!-- fragment --><p><b>macOS:</b></p>
+<div class="fragment"><div class="line">clang -Wall -Wextra -O2 -fPIC -c tarfs.c -o tarfs.o</div>
+<div class="line">clang -shared -o libtarfs.dylib tarfs.o</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
+3. Windows Dynamic Link Library (.dll)</h2>
+<p>Windows requires explicit symbol exporting via compiler specifications. To build the DLL and force the creation of the import library (<code>tarfs.lib</code>), use the following commands based on your compiler flavor.</p>
+<p><b>Native MSVC / LLVM Toolchain:</b></p>
+<div class="fragment"><div class="line">clang -shared -DTARFS_BUILD_DLL tarfs.c -o tarfs.dll -Wl,/implib:tarfs.lib</div>
+</div><!-- fragment --><p><b>MinGW / MSYS2 Environments:</b></p>
+<div class="fragment"><div class="line">clang -shared -DTARFS_BUILD_DLL tarfs.c -o tarfs.dll -Wl,--out-implib,tarfs.lib</div>
+</div><!-- fragment --><hr  />
+<h1><a class="anchor" id="autotoc_md11"></a>
+Linking Against the Library</h1>
+<p>To consume the library within your own host application (e.g., <code>main.c</code>), place <code><a class="el" href="tarfs_8h.html" title="Public API definitions for the lightweight, read-only TAR file system parser.">tarfs.h</a></code> and the compiled library file inside your project directory.</p>
+<h2><a class="anchor" id="autotoc_md12"></a>
+Linking the Static or Shared Library (Linux/macOS)</h2>
+<div class="fragment"><div class="line">clang main.c -L. -ltarfs -o my_program</div>
+</div><!-- fragment --><p><em>Note for Shared Libraries: Ensure you append your execution runtime path using <code>LD_LIBRARY_PATH=. ./my_program</code> so the OS can locate the binary module.</em></p>
+<h2><a class="anchor" id="autotoc_md13"></a>
+Linking the Windows DLL</h2>
+<div class="fragment"><div class="line">clang main.c tarfs.lib -o my_program.exe</div>
+</div><!-- fragment --><p><em>Note: Ensure <code>tarfs.dll</code> resides in the exact same directory as <code>my_program.exe</code> when executing.</em></p>
+<hr  />
+<h1><a class="anchor" id="autotoc_md15"></a>
+Quick API Usage Example</h1>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="tarfs_8h.html">tarfs.h</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>) {</div>
+<div class="line">    <span class="comment">// Open the archive file from disk</span></div>
+<div class="line">    <a class="code hl_struct" href="structtar__archive.html">tar_archive</a> *arc = <a class="code hl_function" href="tarfs_8h.html#a7d984beffce957ca87d251649b372809">tar_open_file</a>(<span class="stringliteral">&quot;assets.tar&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (!arc) {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Failed to open archive.\n&quot;</span>);</div>
+<div class="line">        <span class="keywordflow">return</span> 1;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Inspect general file quantities</span></div>
+<div class="line">    <span class="keywordtype">size_t</span> total_files = <a class="code hl_function" href="tarfs_8h.html#aa3a91207ee4b24006d1a2aa8b36eb97a">tar_get_file_count</a>(arc);</div>
+<div class="line">    printf(<span class="stringliteral">&quot;Archive contains %zu files.\n&quot;</span>, total_files);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Query file elements by path name</span></div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">void</span> *file_data = NULL;</div>
+<div class="line">    <span class="keywordtype">size_t</span> file_size = 0;</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="tarfs_8h.html#aefe9e0c04e9323b2d51cb4cc94decc54">tar_get_file_by_name</a>(arc, <span class="stringliteral">&quot;images/hero.png&quot;</span>, &amp;file_data, &amp;file_size) == 0) {</div>
+<div class="line">        printf(<span class="stringliteral">&quot;Found hero.png! Size: %zu bytes.\n&quot;</span>, file_size);</div>
+<div class="line">        <span class="comment">// file_data points directly to the raw bytes inside memory</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Clean up and release assets safely</span></div>
+<div class="line">    <a class="code hl_function" href="tarfs_8h.html#acdd318d30b9c6ffc0cc171fd1c878aee">tar_close</a>(arc);</div>
+<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">}</div>
+<div class="ttc" id="astructtar__archive_html"><div class="ttname"><a href="structtar__archive.html">tar_archive</a></div><div class="ttdoc">Opaque handle representing a parsed and indexed TAR archive instance.</div><div class="ttdef"><b>Definition</b> tarfs.c:52</div></div>
+<div class="ttc" id="atarfs_8h_html"><div class="ttname"><a href="tarfs_8h.html">tarfs.h</a></div><div class="ttdoc">Public API definitions for the lightweight, read-only TAR file system parser.</div></div>
+<div class="ttc" id="atarfs_8h_html_a7d984beffce957ca87d251649b372809"><div class="ttname"><a href="tarfs_8h.html#a7d984beffce957ca87d251649b372809">tar_open_file</a></div><div class="ttdeci">TARFS_API tar_archive * tar_open_file(const char *filename)</div><div class="ttdoc">Opens a TAR archive from the host file system.</div><div class="ttdef"><b>Definition</b> tarfs.c:175</div></div>
+<div class="ttc" id="atarfs_8h_html_aa3a91207ee4b24006d1a2aa8b36eb97a"><div class="ttname"><a href="tarfs_8h.html#aa3a91207ee4b24006d1a2aa8b36eb97a">tar_get_file_count</a></div><div class="ttdeci">TARFS_API size_t tar_get_file_count(const tar_archive *arc)</div><div class="ttdoc">Obtains the total count of regular file entries indexed inside the archive.</div><div class="ttdef"><b>Definition</b> tarfs.c:212</div></div>
+<div class="ttc" id="atarfs_8h_html_acdd318d30b9c6ffc0cc171fd1c878aee"><div class="ttname"><a href="tarfs_8h.html#acdd318d30b9c6ffc0cc171fd1c878aee">tar_close</a></div><div class="ttdeci">TARFS_API void tar_close(tar_archive *arc)</div><div class="ttdoc">Closes an open archive handle and deallocates its assets.</div><div class="ttdef"><b>Definition</b> tarfs.c:202</div></div>
+<div class="ttc" id="atarfs_8h_html_aefe9e0c04e9323b2d51cb4cc94decc54"><div class="ttname"><a href="tarfs_8h.html#aefe9e0c04e9323b2d51cb4cc94decc54">tar_get_file_by_name</a></div><div class="ttdeci">TARFS_API int tar_get_file_by_name(const tar_archive *arc, const char *name, const void **out_data, size_t *out_size)</div><div class="ttdoc">Queries the archive to find a file by its name string.</div><div class="ttdef"><b>Definition</b> tarfs.c:231</div></div>
+</div><!-- fragment --><hr  />
+<h1><a class="anchor" id="autotoc_md17"></a>
+Documentation Generation</h1>
+<p>The code is formatted explicitly for Doxygen. To compile standard, locally hosted HTML help dashboards, execute the generator tool inside the project root directory:</p>
+<div class="fragment"><div class="line">doxygen Doxyfile</div>
+</div><!-- fragment --><p>The resulting interactive web interface will be written to the <code>doc/html/</code> path automatically.</p>
+<p><code>The following readme was generated using a local gemini E4b model running on a private server.</code> </p>
+</div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 </div><!-- doc-content -->

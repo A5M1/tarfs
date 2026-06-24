@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['gid_0',['gid',['../structtar__header.html#aa1d8df38a2ac4ff6bf1ea1d99d0943a0',1,'tar_header']]],
-  ['gname_1',['gname',['../structtar__header.html#a5aa08858b11f5fe7bb170f8f37770be2',1,'tar_header']]]
+  ['buffer_0',['buffer',['../structtar__archive.html#ab38b7c6237d5c3de989c94483f4b890b',1,'tar_archive']]]
 ];
