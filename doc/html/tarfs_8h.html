@@ -97,6 +97,7 @@ $(function(){initNavTree('tarfs_8h.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">tarfs.h File Reference</div></div>
@@ -110,6 +111,12 @@ $(function(){initNavTree('tarfs_8h.html',''); initResizable(true); });
 </div>
 <p><a href="tarfs_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a1cee8720fa6898275bd1ac06575c5459" id="r_a1cee8720fa6898275bd1ac06575c5459"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a></td></tr>
+<tr class="memdesc:a1cee8720fa6898275bd1ac06575c5459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles explicit DLL symbol exporting/importing on Windows platforms. Evaluates to an empty macro on non-Windows deployment environments.  <br /></td></tr>
+<tr class="separator:a1cee8720fa6898275bd1ac06575c5459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ab61993b54502fb7907058b7896345c88" id="r_ab61993b54502fb7907058b7896345c88"><td class="memItemLeft" align="right" valign="top">typedef struct tar_archive&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab61993b54502fb7907058b7896345c88">tar_archive</a></td></tr>
@@ -117,30 +124,30 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a81c0228d21ba04125be9f576cfd625f2" id="r_a81c0228d21ba04125be9f576cfd625f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtar__archive.html">tar_archive</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81c0228d21ba04125be9f576cfd625f2">tar_open_file</a> (const char *filename)</td></tr>
-<tr class="memdesc:a81c0228d21ba04125be9f576cfd625f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a TAR archive from the host file system.  <br /></td></tr>
-<tr class="separator:a81c0228d21ba04125be9f576cfd625f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60b2b505f17b960444d24b8485c97ba1" id="r_a60b2b505f17b960444d24b8485c97ba1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtar__archive.html">tar_archive</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60b2b505f17b960444d24b8485c97ba1">tar_open_memory</a> (const void *data, size_t size)</td></tr>
-<tr class="memdesc:a60b2b505f17b960444d24b8485c97ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens and parses a TAR archive residing directly within a memory buffer.  <br /></td></tr>
-<tr class="separator:a60b2b505f17b960444d24b8485c97ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34256ce18aea0c515f9fb475ae96e055" id="r_a34256ce18aea0c515f9fb475ae96e055"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34256ce18aea0c515f9fb475ae96e055">tar_close</a> (<a class="el" href="structtar__archive.html">tar_archive</a> *arc)</td></tr>
-<tr class="memdesc:a34256ce18aea0c515f9fb475ae96e055"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes an open archive handle and deallocates its assets.  <br /></td></tr>
-<tr class="separator:a34256ce18aea0c515f9fb475ae96e055"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b1db369811039119fdf0e2fb2b54753" id="r_a7b1db369811039119fdf0e2fb2b54753"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b1db369811039119fdf0e2fb2b54753">tar_get_file_count</a> (const <a class="el" href="structtar__archive.html">tar_archive</a> *arc)</td></tr>
-<tr class="memdesc:a7b1db369811039119fdf0e2fb2b54753"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains the total count of regular file entries indexed inside the archive.  <br /></td></tr>
-<tr class="separator:a7b1db369811039119fdf0e2fb2b54753"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeff3a00fdf3f7fcd4d8b485f7b3bf487" id="r_aeff3a00fdf3f7fcd4d8b485f7b3bf487"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeff3a00fdf3f7fcd4d8b485f7b3bf487">tar_get_file_name</a> (const <a class="el" href="structtar__archive.html">tar_archive</a> *arc, size_t idx)</td></tr>
-<tr class="memdesc:aeff3a00fdf3f7fcd4d8b485f7b3bf487"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the full name/path string of a specific file indexed by position.  <br /></td></tr>
-<tr class="separator:aeff3a00fdf3f7fcd4d8b485f7b3bf487"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1835a2c6c6f65374036c03c87314bc54" id="r_a1835a2c6c6f65374036c03c87314bc54"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1835a2c6c6f65374036c03c87314bc54">tar_get_file_size</a> (const <a class="el" href="structtar__archive.html">tar_archive</a> *arc, size_t idx)</td></tr>
-<tr class="memdesc:a1835a2c6c6f65374036c03c87314bc54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the actual payload size of a specific file indexed by position.  <br /></td></tr>
-<tr class="separator:a1835a2c6c6f65374036c03c87314bc54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1502c5420fc9a5c80ed3cf26e84cfe02" id="r_a1502c5420fc9a5c80ed3cf26e84cfe02"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1502c5420fc9a5c80ed3cf26e84cfe02">tar_get_file_data</a> (const <a class="el" href="structtar__archive.html">tar_archive</a> *arc, size_t idx)</td></tr>
-<tr class="memdesc:a1502c5420fc9a5c80ed3cf26e84cfe02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a direct memory pointer to the payload data of an indexed file.  <br /></td></tr>
-<tr class="separator:a1502c5420fc9a5c80ed3cf26e84cfe02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48e0737c85801089fe0a75d321b290ac" id="r_a48e0737c85801089fe0a75d321b290ac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48e0737c85801089fe0a75d321b290ac">tar_get_file_by_name</a> (const <a class="el" href="structtar__archive.html">tar_archive</a> *arc, const char *name, const void **out_data, size_t *out_size)</td></tr>
-<tr class="memdesc:a48e0737c85801089fe0a75d321b290ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the archive to find a file by its name string.  <br /></td></tr>
-<tr class="separator:a48e0737c85801089fe0a75d321b290ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d984beffce957ca87d251649b372809" id="r_a7d984beffce957ca87d251649b372809"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> <a class="el" href="structtar__archive.html">tar_archive</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d984beffce957ca87d251649b372809">tar_open_file</a> (const char *filename)</td></tr>
+<tr class="memdesc:a7d984beffce957ca87d251649b372809"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a TAR archive from the host file system.  <br /></td></tr>
+<tr class="separator:a7d984beffce957ca87d251649b372809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a143703bd385b99885911b458ac5939fd" id="r_a143703bd385b99885911b458ac5939fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> <a class="el" href="structtar__archive.html">tar_archive</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a143703bd385b99885911b458ac5939fd">tar_open_memory</a> (const void *data, size_t size)</td></tr>
+<tr class="memdesc:a143703bd385b99885911b458ac5939fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens and parses a TAR archive residing directly within a memory buffer.  <br /></td></tr>
+<tr class="separator:a143703bd385b99885911b458ac5939fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdd318d30b9c6ffc0cc171fd1c878aee" id="r_acdd318d30b9c6ffc0cc171fd1c878aee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdd318d30b9c6ffc0cc171fd1c878aee">tar_close</a> (<a class="el" href="structtar__archive.html">tar_archive</a> *arc)</td></tr>
+<tr class="memdesc:acdd318d30b9c6ffc0cc171fd1c878aee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes an open archive handle and deallocates its assets.  <br /></td></tr>
+<tr class="separator:acdd318d30b9c6ffc0cc171fd1c878aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3a91207ee4b24006d1a2aa8b36eb97a" id="r_aa3a91207ee4b24006d1a2aa8b36eb97a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3a91207ee4b24006d1a2aa8b36eb97a">tar_get_file_count</a> (const <a class="el" href="structtar__archive.html">tar_archive</a> *arc)</td></tr>
+<tr class="memdesc:aa3a91207ee4b24006d1a2aa8b36eb97a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains the total count of regular file entries indexed inside the archive.  <br /></td></tr>
+<tr class="separator:aa3a91207ee4b24006d1a2aa8b36eb97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56a75600a7f5ced3fce4753396cbd21d" id="r_a56a75600a7f5ced3fce4753396cbd21d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56a75600a7f5ced3fce4753396cbd21d">tar_get_file_name</a> (const <a class="el" href="structtar__archive.html">tar_archive</a> *arc, size_t idx)</td></tr>
+<tr class="memdesc:a56a75600a7f5ced3fce4753396cbd21d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the full name/path string of a specific file indexed by position.  <br /></td></tr>
+<tr class="separator:a56a75600a7f5ced3fce4753396cbd21d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5d548896d7f5f83336d0906a98eb7a5" id="r_ae5d548896d7f5f83336d0906a98eb7a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5d548896d7f5f83336d0906a98eb7a5">tar_get_file_size</a> (const <a class="el" href="structtar__archive.html">tar_archive</a> *arc, size_t idx)</td></tr>
+<tr class="memdesc:ae5d548896d7f5f83336d0906a98eb7a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the actual payload size of a specific file indexed by position.  <br /></td></tr>
+<tr class="separator:ae5d548896d7f5f83336d0906a98eb7a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52597ecade74aa00c783615e4e3f3485" id="r_a52597ecade74aa00c783615e4e3f3485"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52597ecade74aa00c783615e4e3f3485">tar_get_file_data</a> (const <a class="el" href="structtar__archive.html">tar_archive</a> *arc, size_t idx)</td></tr>
+<tr class="memdesc:a52597ecade74aa00c783615e4e3f3485"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a direct memory pointer to the payload data of an indexed file.  <br /></td></tr>
+<tr class="separator:a52597ecade74aa00c783615e4e3f3485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefe9e0c04e9323b2d51cb4cc94decc54" id="r_aefe9e0c04e9323b2d51cb4cc94decc54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefe9e0c04e9323b2d51cb4cc94decc54">tar_get_file_by_name</a> (const <a class="el" href="structtar__archive.html">tar_archive</a> *arc, const char *name, const void **out_data, size_t *out_size)</td></tr>
+<tr class="memdesc:aefe9e0c04e9323b2d51cb4cc94decc54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the archive to find a file by its name string.  <br /></td></tr>
+<tr class="separator:aefe9e0c04e9323b2d51cb4cc94decc54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Public API definitions for the lightweight, read-only TAR file system parser. </p>
@@ -148,7 +155,24 @@ Functions</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>ABNSOFT </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2026 </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
-</div><h2 class="groupheader">Typedef Documentation</h2>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a1cee8720fa6898275bd1ac06575c5459" name="a1cee8720fa6898275bd1ac06575c5459"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cee8720fa6898275bd1ac06575c5459">&#9670;&#160;</a></span>TARFS_API</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TARFS_API</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles explicit DLL symbol exporting/importing on Windows platforms. Evaluates to an empty macro on non-Windows deployment environments. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
 <a id="ab61993b54502fb7907058b7896345c88" name="ab61993b54502fb7907058b7896345c88"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab61993b54502fb7907058b7896345c88">&#9670;&#160;</a></span>tar_archive</h2>
 
@@ -164,14 +188,14 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a34256ce18aea0c515f9fb475ae96e055" name="a34256ce18aea0c515f9fb475ae96e055"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34256ce18aea0c515f9fb475ae96e055">&#9670;&#160;</a></span>tar_close()</h2>
+<a id="acdd318d30b9c6ffc0cc171fd1c878aee" name="acdd318d30b9c6ffc0cc171fd1c878aee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdd318d30b9c6ffc0cc171fd1c878aee">&#9670;&#160;</a></span>tar_close()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void tar_close </td>
+          <td class="memname"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> void tar_close </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structtar__archive.html">tar_archive</a> *</td>          <td class="paramname"><span class="paramname"><em>arc</em></span></td><td>)</td>
           <td></td>
@@ -180,7 +204,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Closes an open archive handle and deallocates its assets. </p>
-<p>Safely releases internal string mappings, structures, and index tables. If the archive was created via <a class="el" href="#a81c0228d21ba04125be9f576cfd625f2" title="Opens a TAR archive from the host file system.">tar_open_file()</a>, the underlying raw data buffer is also freed.</p>
+<p>Safely releases internal string mappings, structures, and index tables. If the archive was created via <a class="el" href="#a7d984beffce957ca87d251649b372809" title="Opens a TAR archive from the host file system.">tar_open_file()</a>, the underlying raw data buffer is also freed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">arc</td><td>The archive instance to destroy. If <code>arc</code> is <code>NULL</code>, this operation silently, safely terminates with no action. </td></tr>
@@ -190,14 +214,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a48e0737c85801089fe0a75d321b290ac" name="a48e0737c85801089fe0a75d321b290ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48e0737c85801089fe0a75d321b290ac">&#9670;&#160;</a></span>tar_get_file_by_name()</h2>
+<a id="aefe9e0c04e9323b2d51cb4cc94decc54" name="aefe9e0c04e9323b2d51cb4cc94decc54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefe9e0c04e9323b2d51cb4cc94decc54">&#9670;&#160;</a></span>tar_get_file_by_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int tar_get_file_by_name </td>
+          <td class="memname"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> int tar_get_file_by_name </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structtar__archive.html">tar_archive</a> *</td>          <td class="paramname"><span class="paramname"><em>arc</em></span>, </td>
         </tr>
@@ -234,14 +258,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7b1db369811039119fdf0e2fb2b54753" name="a7b1db369811039119fdf0e2fb2b54753"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b1db369811039119fdf0e2fb2b54753">&#9670;&#160;</a></span>tar_get_file_count()</h2>
+<a id="aa3a91207ee4b24006d1a2aa8b36eb97a" name="aa3a91207ee4b24006d1a2aa8b36eb97a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3a91207ee4b24006d1a2aa8b36eb97a">&#9670;&#160;</a></span>tar_get_file_count()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t tar_get_file_count </td>
+          <td class="memname"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> size_t tar_get_file_count </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structtar__archive.html">tar_archive</a> *</td>          <td class="paramname"><span class="paramname"><em>arc</em></span></td><td>)</td>
           <td></td>
@@ -261,14 +285,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1502c5420fc9a5c80ed3cf26e84cfe02" name="a1502c5420fc9a5c80ed3cf26e84cfe02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1502c5420fc9a5c80ed3cf26e84cfe02">&#9670;&#160;</a></span>tar_get_file_data()</h2>
+<a id="a52597ecade74aa00c783615e4e3f3485" name="a52597ecade74aa00c783615e4e3f3485"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52597ecade74aa00c783615e4e3f3485">&#9670;&#160;</a></span>tar_get_file_data()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const void * tar_get_file_data </td>
+          <td class="memname"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> const void * tar_get_file_data </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structtar__archive.html">tar_archive</a> *</td>          <td class="paramname"><span class="paramname"><em>arc</em></span>, </td>
         </tr>
@@ -282,7 +306,7 @@ Functions</h2></td></tr>
 
 <p>Obtains a direct memory pointer to the payload data of an indexed file. </p>
 <p>This provides zero-overhead access to raw files stored inside the TAR archive.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The payload is <b>not null-terminated</b>. If reading text data, you must bound your reads strictly using the size fetched via <a class="el" href="#a1835a2c6c6f65374036c03c87314bc54" title="Retrieves the actual payload size of a specific file indexed by position.">tar_get_file_size()</a>.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The payload is <b>not null-terminated</b>. If reading text data, you must bound your reads strictly using the size fetched via <a class="el" href="#ae5d548896d7f5f83336d0906a98eb7a5" title="Retrieves the actual payload size of a specific file indexed by position.">tar_get_file_size()</a>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">arc</td><td>Pointer to a valid archive instance. </td></tr>
@@ -294,14 +318,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aeff3a00fdf3f7fcd4d8b485f7b3bf487" name="aeff3a00fdf3f7fcd4d8b485f7b3bf487"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeff3a00fdf3f7fcd4d8b485f7b3bf487">&#9670;&#160;</a></span>tar_get_file_name()</h2>
+<a id="a56a75600a7f5ced3fce4753396cbd21d" name="a56a75600a7f5ced3fce4753396cbd21d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56a75600a7f5ced3fce4753396cbd21d">&#9670;&#160;</a></span>tar_get_file_name()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char * tar_get_file_name </td>
+          <td class="memname"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> const char * tar_get_file_name </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structtar__archive.html">tar_archive</a> *</td>          <td class="paramname"><span class="paramname"><em>arc</em></span>, </td>
         </tr>
@@ -318,7 +342,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">arc</td><td>Pointer to a valid archive instance. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Zero-based index of the target file entry. Must be less than <a class="el" href="#a7b1db369811039119fdf0e2fb2b54753" title="Obtains the total count of regular file entries indexed inside the archive.">tar_get_file_count()</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Zero-based index of the target file entry. Must be less than <a class="el" href="#aa3a91207ee4b24006d1a2aa8b36eb97a" title="Obtains the total count of regular file entries indexed inside the archive.">tar_get_file_count()</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -326,14 +350,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1835a2c6c6f65374036c03c87314bc54" name="a1835a2c6c6f65374036c03c87314bc54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1835a2c6c6f65374036c03c87314bc54">&#9670;&#160;</a></span>tar_get_file_size()</h2>
+<a id="ae5d548896d7f5f83336d0906a98eb7a5" name="ae5d548896d7f5f83336d0906a98eb7a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5d548896d7f5f83336d0906a98eb7a5">&#9670;&#160;</a></span>tar_get_file_size()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t tar_get_file_size </td>
+          <td class="memname"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> size_t tar_get_file_size </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structtar__archive.html">tar_archive</a> *</td>          <td class="paramname"><span class="paramname"><em>arc</em></span>, </td>
         </tr>
@@ -349,7 +373,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">arc</td><td>Pointer to a valid archive instance. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Zero-based index of the target file entry. Must be less than <a class="el" href="#a7b1db369811039119fdf0e2fb2b54753" title="Obtains the total count of regular file entries indexed inside the archive.">tar_get_file_count()</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Zero-based index of the target file entry. Must be less than <a class="el" href="#aa3a91207ee4b24006d1a2aa8b36eb97a" title="Obtains the total count of regular file entries indexed inside the archive.">tar_get_file_count()</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -357,14 +381,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a81c0228d21ba04125be9f576cfd625f2" name="a81c0228d21ba04125be9f576cfd625f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81c0228d21ba04125be9f576cfd625f2">&#9670;&#160;</a></span>tar_open_file()</h2>
+<a id="a7d984beffce957ca87d251649b372809" name="a7d984beffce957ca87d251649b372809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d984beffce957ca87d251649b372809">&#9670;&#160;</a></span>tar_open_file()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structtar__archive.html">tar_archive</a> * tar_open_file </td>
+          <td class="memname"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> <a class="el" href="structtar__archive.html">tar_archive</a> * tar_open_file </td>
           <td>(</td>
           <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>filename</em></span></td><td>)</td>
           <td></td>
@@ -384,18 +408,18 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to an initialized <code><a class="el" href="structtar__archive.html" title="Opaque handle representing a parsed and indexed TAR archive instance.">tar_archive</a></code> instance, or <code>NULL</code> if the file cannot be read, is empty, or contains corrupt headers.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a34256ce18aea0c515f9fb475ae96e055" title="Closes an open archive handle and deallocates its assets.">tar_close</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#acdd318d30b9c6ffc0cc171fd1c878aee" title="Closes an open archive handle and deallocates its assets.">tar_close</a> </dd></dl>
 
 </div>
 </div>
-<a id="a60b2b505f17b960444d24b8485c97ba1" name="a60b2b505f17b960444d24b8485c97ba1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60b2b505f17b960444d24b8485c97ba1">&#9670;&#160;</a></span>tar_open_memory()</h2>
+<a id="a143703bd385b99885911b458ac5939fd" name="a143703bd385b99885911b458ac5939fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a143703bd385b99885911b458ac5939fd">&#9670;&#160;</a></span>tar_open_memory()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structtar__archive.html">tar_archive</a> * tar_open_memory </td>
+          <td class="memname"><a class="el" href="#a1cee8720fa6898275bd1ac06575c5459">TARFS_API</a> <a class="el" href="structtar__archive.html">tar_archive</a> * tar_open_memory </td>
           <td>(</td>
           <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
         </tr>
@@ -419,7 +443,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to an initialized <code><a class="el" href="structtar__archive.html" title="Opaque handle representing a parsed and indexed TAR archive instance.">tar_archive</a></code> instance, or <code>NULL</code> if memory allocations fail or parsing invariants are violated.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="#a34256ce18aea0c515f9fb475ae96e055" title="Closes an open archive handle and deallocates its assets.">tar_close</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="#acdd318d30b9c6ffc0cc171fd1c878aee" title="Closes an open archive handle and deallocates its assets.">tar_close</a> </dd></dl>
 
 </div>
 </div>

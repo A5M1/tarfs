@@ -263,7 +263,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Closes an open archive handle and deallocates its assets. </p>
-<p>Safely releases internal string mappings, structures, and index tables. If the archive was created via <a class="el" href="tarfs_8h.html#a81c0228d21ba04125be9f576cfd625f2" title="Opens a TAR archive from the host file system.">tar_open_file()</a>, the underlying raw data buffer is also freed.</p>
+<p>Safely releases internal string mappings, structures, and index tables. If the archive was created via <a class="el" href="tarfs_8h.html#a7d984beffce957ca87d251649b372809" title="Opens a TAR archive from the host file system.">tar_open_file()</a>, the underlying raw data buffer is also freed.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">arc</td><td>The archive instance to destroy. If <code>arc</code> is <code>NULL</code>, this operation silently, safely terminates with no action. </td></tr>
@@ -365,7 +365,7 @@ Functions</h2></td></tr>
 
 <p>Obtains a direct memory pointer to the payload data of an indexed file. </p>
 <p>This provides zero-overhead access to raw files stored inside the TAR archive.</p>
-<dl class="section warning"><dt>Warning</dt><dd>The payload is <b>not null-terminated</b>. If reading text data, you must bound your reads strictly using the size fetched via <a class="el" href="tarfs_8h.html#a1835a2c6c6f65374036c03c87314bc54" title="Retrieves the actual payload size of a specific file indexed by position.">tar_get_file_size()</a>.</dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>The payload is <b>not null-terminated</b>. If reading text data, you must bound your reads strictly using the size fetched via <a class="el" href="tarfs_8h.html#ae5d548896d7f5f83336d0906a98eb7a5" title="Retrieves the actual payload size of a specific file indexed by position.">tar_get_file_size()</a>.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">arc</td><td>Pointer to a valid archive instance. </td></tr>
@@ -401,7 +401,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">arc</td><td>Pointer to a valid archive instance. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Zero-based index of the target file entry. Must be less than <a class="el" href="tarfs_8h.html#a7b1db369811039119fdf0e2fb2b54753" title="Obtains the total count of regular file entries indexed inside the archive.">tar_get_file_count()</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Zero-based index of the target file entry. Must be less than <a class="el" href="tarfs_8h.html#aa3a91207ee4b24006d1a2aa8b36eb97a" title="Obtains the total count of regular file entries indexed inside the archive.">tar_get_file_count()</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -432,7 +432,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">arc</td><td>Pointer to a valid archive instance. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Zero-based index of the target file entry. Must be less than <a class="el" href="tarfs_8h.html#a7b1db369811039119fdf0e2fb2b54753" title="Obtains the total count of regular file entries indexed inside the archive.">tar_get_file_count()</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Zero-based index of the target file entry. Must be less than <a class="el" href="tarfs_8h.html#aa3a91207ee4b24006d1a2aa8b36eb97a" title="Obtains the total count of regular file entries indexed inside the archive.">tar_get_file_count()</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -467,7 +467,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to an initialized <code><a class="el" href="structtar__archive.html" title="Opaque handle representing a parsed and indexed TAR archive instance.">tar_archive</a></code> instance, or <code>NULL</code> if the file cannot be read, is empty, or contains corrupt headers.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="tarfs_8h.html#a34256ce18aea0c515f9fb475ae96e055" title="Closes an open archive handle and deallocates its assets.">tar_close</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="tarfs_8h.html#acdd318d30b9c6ffc0cc171fd1c878aee" title="Closes an open archive handle and deallocates its assets.">tar_close</a> </dd></dl>
 
 </div>
 </div>
@@ -502,7 +502,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to an initialized <code><a class="el" href="structtar__archive.html" title="Opaque handle representing a parsed and indexed TAR archive instance.">tar_archive</a></code> instance, or <code>NULL</code> if memory allocations fail or parsing invariants are violated.</dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="tarfs_8h.html#a34256ce18aea0c515f9fb475ae96e055" title="Closes an open archive handle and deallocates its assets.">tar_close</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="tarfs_8h.html#acdd318d30b9c6ffc0cc171fd1c878aee" title="Closes an open archive handle and deallocates its assets.">tar_close</a> </dd></dl>
 
 </div>
 </div>
