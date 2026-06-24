@@ -144,3 +144,7 @@ doxygen Doxyfile
 ```
 
 The resulting interactive web interface will be written to the `doc/html/` path automatically.
+
+
+`The following readme was generated using a local gemini E4b model running on a private server.`
+
