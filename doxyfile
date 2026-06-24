@@ -1,0 +1,15 @@
+PROJECT_NAME           = "tarfs"
+PROJECT_NUMBER         = "1.0.0"
+OUTPUT_DIRECTORY       = doc
+OPTIMIZE_OUTPUT_FOR_C  = YES
+EXTRACT_ALL            = YES
+EXTRACT_STATIC         = YES
+WARN_IF_UNDOCUMENTED   = YES
+INPUT                  = tarfs.h tarfs.c main.c
+FILE_PATTERNS          = *.h *.c
+RECURSIVE              = NO
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+GENERATE_TREEVIEW      = YES
+DISABLE_INDEX          = NO
+FULL_PATH_NAMES        = NO
